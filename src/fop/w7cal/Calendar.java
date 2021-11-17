@@ -27,14 +27,20 @@ public class Calendar {
     }
     public Event nextEvent (int day)
     {
-
-        int k=1;
-        while (true){
-        for (EventList t =events;t!=null;t=t.getNext())
+        Event ev = null;
+        int Mx = Integer.MAX_VALUE;
+        for (EventList t = events;t!=null;t=t.getNext())
         {
-
-            if(t.getEvent().diff(day) == k) {return t.getEvent();}
+            if(t.getEvent().diff(day) < Mx) {Mx = t.getEvent().diff(day); ev = t.getEvent();}
         }
-        k++;}
+        return ev;
+//        int k=1; // es ro rame da event ar iyos chaicikleba
+//        while (true){
+//        for (EventList t =events;t!=null;t=t.getNext())
+//        {
+//
+//            if(t.getEvent().diff(day) == k) {return t.getEvent();}
+//        }
+//        k++;}
     }
 }
