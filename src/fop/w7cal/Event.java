@@ -10,7 +10,10 @@ abstract class Event {
         this.description = description;
         this.place = place;
     }
-    abstract public int diff(int day);
+     public int diff(int day)
+     {
+         return 0;
+     }
 
     public int getDay() {
         return day;
