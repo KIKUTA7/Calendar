@@ -1,6 +1,7 @@
 package fop.w7cal;
 
 public class Calendar {
+
     EventList events;
     public Calendar (EventList events)
     {
